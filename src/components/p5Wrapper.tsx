@@ -8,9 +8,20 @@ const P5Wrapper: React.FC = () => {
 
   useEffect(() => {
     if (!container.current) return;
+
+    let p5Instance: p5;
+
+    const sketch = (p: p5) => {
+      p.setup = () => {
+        p.createCanvas(800, 600);
+        p.background(255);
+      };
+    };
+
+    p5Instance = new p5(sketch, container.current);
   });
 
-  return <div>asdfasdAA</div>;
+  return <div ref={container} />;
 };
 
 export default P5Wrapper;
