@@ -19,6 +19,10 @@ const P5Wrapper: React.FC = () => {
     };
 
     p5Instance = new p5(sketch, container.current);
+
+    return () => {
+      p5Instance.remove();
+    };
   });
 
   return <div ref={container} />;
