@@ -16,6 +16,14 @@ export default function Home() {
 
   const [eraseCanvas, setEraseCanvas] = useState(() => () => {});
 
+  const handleUpdateDrawingState = (updates: Partial<typeof drawingState>) => {
+    setDrawingState(prev => ({ ...prev, ...updates }));
+  };
+
+  const handleSetEraseCallback = useCallback((callback: () => void) => {
+    setEraseCanvas(() => callback);
+  }, []);
+
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-gray-100">
       <div className="flex-grow relative">
