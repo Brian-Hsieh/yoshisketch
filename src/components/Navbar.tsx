@@ -5,3 +5,21 @@ const COLORS = {
   'light-pink': '#f8bbd0',
   'light-grey': '#e0e0e0'
 };
+
+interface Props {
+  onUpdateDrawingState: (updates: Partial<{
+    mode: DrawingMode;
+    strokeSize: StrokeSize;
+    textSize: TextSize;
+    color: DrawingColor;
+    text: string;
+  }>) => void;
+  onErase: () => void;
+  drawingState: {
+    color: DrawingColor;
+    strokeSize: StrokeSize;
+    textSize: TextSize;
+    mode: DrawingMode;
+  };
+}
+
