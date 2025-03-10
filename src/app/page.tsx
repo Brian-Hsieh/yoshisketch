@@ -26,8 +26,15 @@ export default function Home() {
 
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-gray-100">
+      <Navbar 
+        onUpdateDrawingState={handleUpdateDrawingState}
+        onErase={eraseCanvas}
+        drawingState={drawingState}
+      />
       <div className="flex-grow relative">
         <InfCanvas 
+          drawingState={drawingState}
+          onErase={handleSetEraseCallback}
         />
       </div>
     </div>
