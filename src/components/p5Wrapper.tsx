@@ -25,7 +25,7 @@ const P5Wrapper: React.FC = () => {
     };
   });
 
-  return <div ref={container} />;
+  return <div ref={container} className="w-full h-full" />;
 };
 
 export default P5Wrapper;
